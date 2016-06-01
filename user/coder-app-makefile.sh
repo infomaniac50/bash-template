@@ -33,11 +33,15 @@ docker: prepare
 	coder fix_perms
 	/bin/bash iter.sh
 
-prepare: src/vendor/
+prepare: src/composer.lock src/vendor/autoload.php
 
-src/vendor: src/composer.json
+src/vendor/autoload.php: src/composer.lock
 	cd src/ && composer install
-	@touch src/vendor/
+
+src/composer.lock: src/composer.json
+	cd src/ && composer update
+	touch src/vendor/autoload.php
+
 
 ENDOFSTRING
 ) > Makefile

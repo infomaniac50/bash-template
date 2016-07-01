@@ -33,6 +33,9 @@ docker: prepare
 	coder fix_perms
 	/bin/bash iter.sh
 
+autoload:
+	cd src/ && composer dumpautoload
+
 prepare: src/composer.lock src/vendor/autoload.php
 
 src/vendor/autoload.php: src/composer.lock

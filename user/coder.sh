@@ -7,13 +7,15 @@ cat <<ENDOFSTRING
 # Keep the trailing slashes consistent
 # if you want rsync to upload to the right place.
 
-# Extra rsync arguments
-# extra_=""
+# if find_in_ancestor "rsync-exclude.txt"; then
+    # Extra rsync arguments
+    # export extra_=--exclude-from="$found_in_ancestor"
 
-# Local Project Directory
-local_='src/'
+    # Local Project Directory
+    export local_='src/'
 
-# Remote Project Directory
-remote_='<username>@<hostname>:<remote directory>/'
+    # Remote Project Directory
+    remote_='<username>@<hostname>:<remote directory>/'
+# fi
 ENDOFSTRING
 ) > .coder

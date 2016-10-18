@@ -17,21 +17,21 @@ clean:
 clean-dev: clean
 	rm -rf src/vendor/
 
-push: prepare
-	coder fix_perms
+push: prepare fix_perms
 	coder push
 
-delete: prepare
-	coder fix_perms
+delete: prepare fix_perms
 	coder push --delete
 
-status: prepare
-	coder fix_perms
+status: prepare fix_perms
 	coder status --delete
 
-docker: prepare
-	coder fix_perms
+docker: prepare fix_perms
 	/bin/bash iter.sh
+
+fix_perms:
+	coder fix_perms
+	chmod go+rx src/
 
 autoload:
 	cd src/ && composer dumpautoload

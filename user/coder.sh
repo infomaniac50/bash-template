@@ -9,7 +9,7 @@ cat <<ENDOFSTRING
 
 # if find_in_ancestor "rsync-exclude.txt"; then
     # Extra rsync arguments
-    # export extra_=--exclude-from="$found_in_ancestor"
+    # export extra_=--exclude-from="\$found_in_ancestor"
 
     # Local Project Directory
     export local_='src/'

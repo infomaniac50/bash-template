@@ -15,7 +15,7 @@ cat <<ENDOFSTRING
     export local_='src/'
 
     # Remote Project Directory
-    remote_='<username>@<hostname>:<remote directory>/'
+    export remote_='<username>@<hostname>:<remote directory>/'
 # fi
 ENDOFSTRING
 ) > .coder

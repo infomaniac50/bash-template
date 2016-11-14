@@ -7,7 +7,7 @@ all: build
 # use the 'all' rule as the default target).
 .PHONY: all
 
-PREFIX="/usr/local/bin"
+PREFIX=$(HOME)/prefix/bin
 
 clean:
 	git clean -Xdf
